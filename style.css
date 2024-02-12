@@ -1,0 +1,122 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    background-color: whitesmoke;
+}
+header {
+    width: 100%;
+    margin: auto;
+}
+.navbar {
+    background-color: rgb(63, 62, 62);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.navbar h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    color: red;
+}
+.navbar a {
+    text-decoration: none;
+    text-align: center;
+}
+.search {
+    grid-column: 4 / span 1;
+    text-align: right;
+}
+.search input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 15px;
+}
+.btn {
+    padding: 8px 20px;
+    margin-top: 3px;
+    background-color: rgb(141, 187, 73);
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 14px;
+}
+.container {
+    display: grid;
+    padding: 20px;
+}
+.items {
+    grid-row-end: span 3;
+    padding: 10px;
+    margin-bottom: 5px;
+    transition: transform 0.3s;
+}
+.items img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+.items:nth-child(odd) {
+    grid-row-end: span 2;
+}
+.items:hover {
+    transform: scale(1.05); 
+}
+
+  /* Responsive layout for phone*/
+@media (max-width: 575px) {
+  .container{
+      grid-template-columns: 1fr;
+      justify-content: center;
+  }
+}
+  /* screen for tablet */
+@media screen and (min-width: 768px) {
+  .container {
+      grid-template-columns: repeat(2,1fr); 
+    }
+  }
+    /* screen for laptop */
+@media screen and (min-width: 992px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+} 
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.644);
+}
+.content {
+  width: 70%;
+  height: 90%;
+  margin: auto;
+  object-fit: contain;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.close {
+  color: #fff;
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  font-size: 50px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
